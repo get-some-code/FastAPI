@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "author": "Peter Parker",
+        "title": "FastAPI is really fast",
+        "content": "This framework is really easy to use and super fast.",
+        "date_posted": "April 20, 2026"
+    },
+    {
+        "id": 2,
+        "author": "Tony Stark",
+        "title": "Python for beginners",
+        "content": "Python is the most beginner friendly and versatile language ever.",
+        "date_posted": "May 20, 2026"
+    },
+    {
+        "id": 3,
+        "author": "Bruce Wayne",
+        "title": "Mastering Java in 30 Days",
+        "content": "Java remains one of the most reliable programming languages for enterprise applications and interviews.",
+        "date_posted": "June 2, 2026"
+    },
+    {
+        "id": 4,
+        "author": "Natasha Romanoff",
+        "title": "Understanding REST APIs",
+        "content": "REST APIs allow applications to communicate efficiently using HTTP methods like GET, POST, PUT, and DELETE.",
+        "date_posted": "June 8, 2026"
+    },
+    {
+        "id": 5,
+        "author": "Steve Rogers",
+        "title": "Why Learn Data Structures?",
+        "content": "Strong knowledge of data structures helps write efficient programs and crack technical interviews.",
+        "date_posted": "June 12, 2026"
+    },
+    {
+        "id": 6,
+        "author": "Wanda Maximoff",
+        "title": "Getting Started with Machine Learning",
+        "content": "Machine Learning enables computers to learn from data without being explicitly programmed.",
+        "date_posted": "June 18, 2026"
+    },
+    {
+        "id": 7,
+        "author": "Stephen Strange",
+        "title": "Introduction to Docker",
+        "content": "Docker makes it easy to package applications and their dependencies into portable containers.",
+        "date_posted": "June 22, 2026"
+    },
+    {
+        "id": 8,
+        "author": "Thor Odinson",
+        "title": "Git Tips Every Developer Should Know",
+        "content": "Learning branching, merging, and pull requests can greatly improve your development workflow.",
+        "date_posted": "June 27, 2026"
+    },
+    {
+        "id": 9,
+        "author": "Clint Barton",
+        "title": "Deploying FastAPI Applications",
+        "content": "Deploy your FastAPI apps using Docker, Nginx, and Uvicorn for a production-ready setup.",
+        "date_posted": "July 1, 2026"
+    },
+    {
+        "id": 10,
+        "author": "Nick Fury",
+        "title": "Why Every Developer Should Learn Linux",
+        "content": "Linux powers servers, cloud infrastructure, and development environments around the world.",
+        "date_posted": "July 5, 2026"
+    },
+    {
+        "id": 11,
+        "author": "Scott Lang",
+        "title": "Tailwind CSS Makes UI Easy",
+        "content": "Utility-first CSS lets developers create beautiful interfaces without writing custom CSS.",
+        "date_posted": "July 9, 2026"
+    },
+    {
+        "id": 12,
+        "author": "Carol Danvers",
+        "title": "Building Responsive Websites",
+        "content": "Responsive design ensures your website looks great on desktops, tablets, and smartphones.",
+        "date_posted": "July 14, 2026"
+    },
+    {
+        "id": 13,
+        "author": "Loki Laufeyson",
+        "title": "JavaScript ES6 Features",
+        "content": "Arrow functions, destructuring, template literals, and modules simplify modern JavaScript development.",
+        "date_posted": "July 20, 2026"
+    },
+    {
+        "id": 14,
+        "author": "Sam Wilson",
+        "title": "Database Design Basics",
+        "content": "A well-designed database improves performance, scalability, and data consistency.",
+        "date_posted": "July 24, 2026"
+    },
+    {
+        "id": 15,
+        "author": "Vision",
+        "title": "SQL vs NoSQL Databases",
+        "content": "SQL databases are relational while NoSQL databases offer flexibility for unstructured data.",
+        "date_posted": "July 30, 2026"
+    },
+    {
+        "id": 16,
+        "author": "Bucky Barnes",
+        "title": "Learning Django in 2026",
+        "content": "Django provides authentication, ORM, and an admin panel to rapidly build secure web applications.",
+        "date_posted": "August 3, 2026"
+    },
+    {
+        "id": 17,
+        "author": "Pepper Potts",
+        "title": "Introduction to Cloud Computing",
+        "content": "Cloud platforms like AWS, Azure, and Google Cloud help deploy scalable applications with ease.",
+        "date_posted": "August 8, 2026"
+    },
+    {
+        "id": 18,
+        "author": "Rocket Raccoon",
+        "title": "Debugging Like a Pro",
+        "content": "Reading stack traces, using breakpoints, and logging effectively can save hours of development time.",
+        "date_posted": "August 14, 2026"
+    },
+    {
+        "id": 19,
+        "author": "Gamora",
+        "title": "Version Control Best Practices",
+        "content": "Commit frequently, write meaningful messages, and keep your branches organized for clean collaboration.",
+        "date_posted": "August 19, 2026"
+    },
+    {
+        "id": 20,
+        "author": "T'Challa",
+        "title": "Artificial Intelligence Explained",
+        "content": "Artificial Intelligence combines algorithms and data to solve complex problems and automate decision-making.",
+        "date_posted": "August 25, 2026"
+    }
+]

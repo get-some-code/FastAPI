@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Back Button -->
+<div class="mb-8">
+    <a href="/"
+       class="inline-flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition">
+
+        <span>←</span>
+        <span>Back to Posts</span>
+
+    </a>
+</div>
+
+
+<!-- Blog Post -->
+<article class="max-w-4xl mx-auto">
+
+    <!-- Post Header -->
+    <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
+
+        <!-- Post ID -->
+        <div class="flex items-center justify-between mb-6">
+
+            <span class="text-sm text-cyan-400 font-semibold">
+                POST #{{ post.id }}
+            </span>
+
+            <span class="text-sm text-gray-400">
+                {{ post.date_posted }}
+            </span>
+
+        </div>
+
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+
+            {{ post.title }}
+
+        </h1>
+
+
+        <!-- Author -->
+        <div class="flex items-center gap-4 pb-8 border-b border-white/10">
+
+            <!-- Avatar -->
+            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center text-slate-950 font-bold text-lg">
+
+                {{ post.author[0] }}
+
+            </div>
+
+            <div>
+
+                <p class="text-sm text-gray-400">
+                    Written by
+                </p>
+
+                <p class="font-semibold text-white">
+                    {{ post.author }}
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Content -->
+        <div class="mt-10">
+
+            <p class="text-lg md:text-xl text-gray-300 leading-9">
+
+                {{ post.content }}
+
+            </p>
+
+        </div>
+
+
+        <!-- Bottom Information -->
+        <div class="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4">
+
+            <div>
+
+                <p class="text-sm text-gray-500">
+                    Published on
+                </p>
+
+                <p class="text-gray-300 font-medium">
+                    {{ post.date_posted }}
+                </p>
+
+            </div>
+
+
+            <a href="/"
+               class="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:scale-105 transition-transform">
+
+                Read More Posts →
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Related / Footer Message -->
+    <div class="text-center mt-12">
+
+        <h2 class="text-2xl font-bold">
+            Enjoyed this
+            <span class="text-cyan-400">
+                article?
+            </span>
+        </h2>
+
+        <p class="text-gray-400 mt-3">
+            Explore more articles and discover new ideas on MyBlog.
+        </p>
+
+    </div>
+
+</article>
+
+{% endblock %}
