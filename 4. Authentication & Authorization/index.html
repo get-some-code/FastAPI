@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Portal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 420px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #4f46e5;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #4f46e5;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #4338ca;
+        }
+
+        .switch {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .switch button {
+            width: auto;
+            padding: 0;
+            margin: 0;
+            background: none;
+            color: #4f46e5;
+            font-size: 14px;
+        }
+
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- REGISTER CARD -->
+        <div class="card" id="registerCard">
+
+            <h1>Create Account</h1>
+
+            <form id="registerForm">
+
+                <div class="form-group">
+                    <label for="registerName">Name</label>
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Register
+                </button>
+
+            </form>
+
+            <div id="registerMessage" class="message"></div>
+
+            <div class="switch">
+                Already have an account?
+
+                <button type="button" onclick="showLogin()">
+                    Login
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN CARD -->
+        <div class="card hidden" id="loginCard">
+
+            <h1>Welcome Back</h1>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <div id="loginMessage" class="message"></div>
+
+            <div class="switch">
+                Don't have an account?
+
+                <button type="button" onclick="showRegister()">
+                    Register
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // -------------------------
+        // SWITCH FORMS
+        // -------------------------
+
+        function showLogin() {
+
+            document
+                .getElementById("registerCard")
+                .classList.add("hidden");
+
+            document
+                .getElementById("loginCard")
+                .classList.remove("hidden");
+        }
+
+
+        function showRegister() {
+
+            document
+                .getElementById("loginCard")
+                .classList.add("hidden");
+
+            document
+                .getElementById("registerCard")
+                .classList.remove("hidden");
+        }
+
+
+        // -------------------------
+        // REGISTER
+        // -------------------------
+
+        const registerForm =
+            document.getElementById("registerForm");
+
+
+        registerForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("registerName").value;
+
+                const email =
+                    document.getElementById("registerEmail").value;
+
+                const password =
+                    document.getElementById("registerPassword").value;
+
+
+                const response = await fetch("/register", {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        password: password
+                    })
+
+                });
+
+
+                const data = await response.json();
+
+
+                document.getElementById(
+                    "registerMessage"
+                ).textContent = data.message || data.detail;
+
+            }
+        );
+
+
+        // -------------------------
+        // LOGIN
+        // -------------------------
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+
+        loginForm.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+                const email =
+                    document.getElementById("loginEmail").value;
+
+                const password =
+                    document.getElementById("loginPassword").value;
+
+
+                const response = await fetch("/login", {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    })
+
+                });
+
+
+                const data = await response.json();
+
+
+                if (response.ok) {
+
+                    // Store JWT
+                    localStorage.setItem(
+                        "access_token",
+                        data.access_token
+                    );
+
+                    document.getElementById(
+                        "loginMessage"
+                    ).textContent = data.message;
+
+                    console.log(
+                        "JWT:",
+                        data.access_token
+                    );
+
+                } else {
+
+                    document.getElementById(
+                        "loginMessage"
+                    ).textContent = data.detail;
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
